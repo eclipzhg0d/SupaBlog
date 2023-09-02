@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 export default async function PostsRoot() {
   const { data, error } = await supabase.from("posts").select("*");
   if (error) throw new Error("Fetching failed.");
-  revalidatePath("/posts/");
+  revalidatePath("/");
 
   if (!data) {
     return <div className="text-white">No posts to show.</div>;

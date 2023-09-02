@@ -27,6 +27,10 @@ const navLink = [
     name: "Create a Post",
     link: "/new",
   },
+  {
+    name: "Guestbook",
+    link: "/guestbook",
+  },
 ];
 
 export default function Nav() {

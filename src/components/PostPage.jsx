@@ -7,20 +7,25 @@ export default function PostPage({ post }) {
   return (
     <>
       {post?.map((post) => (
-        <div key={post.id} className="text-white p-5 cursor-pointer">
-          <div className="font-medium text-xl">{post.title}</div>
+        <div key={post.id} className="text-white p-5 cursor-pointer ">
+          <div className="font-medium text-xl text-center pt-10">
+            {post.title}
+          </div>
+          <div className="flex items-center gap-5 justify-center opacity-25 text-xs font-base py-10">
+            <div>Author: {post.username}</div>
+            <div>
+              Posted on: <Date dateString={post.created_at} />
+            </div>
+            <div className="">
+              <button className="px-3 py-1 rounded-md bg-zinc-900 text-white">
+                {post.category}
+              </button>
+            </div>
+          </div>
           <div className="py-3">
             <LazyImage imageSrc={post.imgsrc} />
           </div>
           <div className="py-3 ">{post.content}</div>
-
-          <div className=" opacity-75 py-5">
-            <div className="">
-              <div className="">Author: {post.username}</div>
-              <Date dateString={post.created_at} />{" "}
-            </div>
-            <div>Category: {post.category}</div>
-          </div>
         </div>
       ))}
     </>

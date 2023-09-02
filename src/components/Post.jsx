@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LazyImage from "./ui/LazyImage";
+import Date from "./ui/Date";
 
 export default function Post({ post }) {
   return (
@@ -9,8 +10,13 @@ export default function Post({ post }) {
         <div className="py-3">
           <LazyImage imageSrc={post.imgsrc} />
         </div>
-        <div className="opacity-50">
-          by <b>{post.username}</b>
+        <div className="opacity-50 flex items-center justify-between">
+          <div>
+            <div>{post.username}</div>
+          </div>
+          <div className="text-sm">
+            <Date dateString={post.created_at} />
+          </div>
         </div>
       </div>
     </Link>
