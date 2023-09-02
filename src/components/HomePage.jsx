@@ -15,8 +15,8 @@ export default function HomePage() {
             <span>blog template</span>
           </h1>
           <p className="px-0 mb-8 text-lg text-zinc-400 md:text-xl lg:px-24">
-            This app is based on Next JS 13 using App Router and Supabase as a
-            backend.
+            This app is based on Next JS 13 using App Router and Supabase &
+            Clerk Auth as a backend.
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <a

@@ -62,7 +62,7 @@ export default function Nav() {
           </div>
           <div className="hidden md:flex items-center gap-3 text-white">
             <SignedIn>
-              <UserButton afterSignOutUrl="/" />
+              <UserButton />
               <SignOutButton>
                 <button className="px-3 text-sm rounded-md py-1 bg-zinc-900 text-zinc-300 hover:text-red-400 transition duration-300">
                   Sign Out
