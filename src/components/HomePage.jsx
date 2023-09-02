@@ -20,7 +20,7 @@ export default function HomePage() {
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <a
-              href="#_"
+              href="https://github.com/eclipzhg0d/SupaBlog/"
               className="inline-flex items-center justify-center w-full px-4 py-3 mb-2 text-md text-white bg-green-500 rounded-2xl sm:w-auto sm:mb-0 hover:bg-green-700 transition duration-300  "
             >
               Documentation
@@ -38,7 +38,7 @@ export default function HomePage() {
               </svg>
             </a>
             <a
-              href="#_"
+              href="/new/"
               className="inline-flex items-center justify-center w-full px-4 py-3 mb-2 text-md bg-zinc-200 hover:bg-zinc-300 rounded-2xl sm:w-auto sm:mb-0 transition duration-300 "
             >
               Get Started
