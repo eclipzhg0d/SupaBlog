@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import supabase from "@/utils/supabase";
-import { useSession } from "@clerk/nextjs";
+import { useSession, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 const BlogNew = () => {
   const router = useRouter();
@@ -37,30 +37,42 @@ const BlogNew = () => {
   };
 
   return (
-    <div className="w-full  md:max-w-full mx-auto pt-1 ">
-      <div className="p-6 border border-zinc-900 sm:rounded-md text-sm">
-        <form onSubmit={onSubmit}>
-          <label className="block mb-6 ">
-            <div className="text-gray-700 py-1">Title</div>
-            <input
-              ref={titleRef}
-              type="text"
-              id="title"
-              placeholder="Title"
-              className="block py-4 px-3 w-full text-sm text-gray-50 placeholder-gray-10 font-medium outline-none bg-transparent border border-zinc-900 hover:border-white focus:border-green-500 rounded-lg"
-              required
-            />
-          </label>
+    <>
+      <SignedOut>
+        <div className="alert text-white opacity-25 text-sm mt-5">
+          <span>Please sign-in to create a posts.</span>
+          <SignInButton>
+            <button className="text-sm  text-green-500  transition duration-300">
+              Sign In
+            </button>
+          </SignInButton>
+        </div>
+      </SignedOut>
+      <SignedIn>
+        <div className="w-full  md:max-w-full mx-auto pt-1 ">
+          <div className="p-6 border border-zinc-900 sm:rounded-md text-sm">
+            <form onSubmit={onSubmit}>
+              <label className="block mb-6 ">
+                <div className="text-gray-700 py-1">Title</div>
+                <input
+                  ref={titleRef}
+                  type="text"
+                  id="title"
+                  placeholder="Title"
+                  className="block py-4 px-3 w-full text-sm text-gray-50 placeholder-gray-10 font-medium outline-none bg-transparent border border-zinc-900 hover:border-white focus:border-green-500 rounded-lg"
+                  required
+                />
+              </label>
 
-          <label className="block mb-6">
-            <div className="text-gray-700 py-1">Content</div>
-            <textarea
-              ref={contentRef}
-              id="content"
-              placeholder="Content"
-              rows={15}
-              required
-              className="
+              <label className="block mb-6">
+                <div className="text-gray-700 py-1">Content</div>
+                <textarea
+                  ref={contentRef}
+                  id="content"
+                  placeholder="Content"
+                  rows={15}
+                  required
+                  className="
               text-zinc-300
             block
             w-full
@@ -74,15 +86,15 @@ const BlogNew = () => {
   
             bg-[#09090B]
           "
-            ></textarea>
-          </label>
-          <div className="mb-6">
-            {loading ? (
-              <div>Loading..</div>
-            ) : (
-              <button
-                type="submit"
-                className="
+                ></textarea>
+              </label>
+              <div className="mb-6">
+                {loading ? (
+                  <div>Loading..</div>
+                ) : (
+                  <button
+                    type="submit"
+                    className="
                 text-zinc-900
             h-10
             px-5
@@ -95,14 +107,16 @@ const BlogNew = () => {
             hover:bg-green-700
             w-full md:w-auto
           "
-              >
-                Submit
-              </button>
-            )}
+                  >
+                    Submit
+                  </button>
+                )}
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+      </SignedIn>
+    </>
   );
 };
 

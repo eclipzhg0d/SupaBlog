@@ -99,9 +99,11 @@ export default function Nav() {
               <UserButton />
             </SignedIn>
             <SignedOut>
-              <button className="px-3 text-sm rounded-md py-2 bg-green-500  text-zinc-900 hover:bg-green-300  transition duration-300">
-                Sign In
-              </button>
+              <SignInButton>
+                <button className="px-3 text-sm rounded-md py-2 bg-green-500  text-zinc-900 hover:bg-green-300  transition duration-300">
+                  Sign In
+                </button>
+              </SignInButton>
             </SignedOut>
           </div>
         </div>
