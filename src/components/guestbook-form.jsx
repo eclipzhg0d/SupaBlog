@@ -5,23 +5,21 @@ import { useRouter } from "next/navigation";
 import supabase from "@/utils/supabase";
 import { useSession, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
-export const revalidate = 0;
-
-export default function CommentForm({ id }) {
+export default function GuestBookForm() {
   const router = useRouter();
   const { session } = useSession();
   const contentRef = useRef(null);
+
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const { error: insertError } = await supabase.from("comments").insert({
+    const { error: insertError } = await supabase.from("guestbook").insert({
       content: contentRef.current.value,
       user_id: session.user.id,
       username: session.user.username,
-      post_id: id,
     });
 
     if (insertError) {
@@ -30,23 +28,26 @@ export default function CommentForm({ id }) {
       return;
     }
 
+    router.refresh();
+
     setLoading(false);
   };
   return (
     <div className="">
-      <div className="text-zinc-200 text-lg py-10">Comments</div>
+      <div className="text-zinc-200 text-lg py-10">
+        Got any idea? Let me know.
+      </div>
       <div>
         <div className="w-full  md:max-w-full mx-auto pt-1 ">
           <div className="p-6 border border-zinc-900 sm:rounded-md text-sm">
             <form onSubmit={onSubmit}>
               <SignedIn>
                 <label className="block mb-6">
-                  <div className="text-gray-700 py-1">Write a comment</div>
                   <textarea
                     ref={contentRef}
                     id="content"
-                    placeholder="Your comment here.."
-                    rows={3}
+                    placeholder="Write your idea/suggestion or just say hi! :)"
+                    rows={7}
                     required
                     className="
               text-zinc-300
@@ -67,7 +68,7 @@ export default function CommentForm({ id }) {
               </SignedIn>
               <SignedOut>
                 <div className="alert text-white opacity-25 text-sm my-5">
-                  <span>Please sign-in to create a comment.</span>
+                  <span>Please sign-in to create a posts.</span>
                   <SignInButton>
                     <button className="text-sm  text-green-500  transition duration-300">
                       Sign In

@@ -1,10 +1,8 @@
 import Link from "next/link";
-import LazyImage from "./ui/LazyImage";
-import Date from "./ui/Date";
+import LazyImage from "./ui/lazy-image";
+import Date from "./ui/date";
 
-export const revalidate = 0;
-
-export default function Post({ post }) {
+export default function PostCard({ post }) {
   return (
     <Link href={`/posts/${post.id}`}>
       <div className="text-white p-5 opacity-75 hover:opacity-100 ease-in-out transition">

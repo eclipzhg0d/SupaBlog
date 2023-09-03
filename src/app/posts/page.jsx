@@ -1,10 +1,10 @@
-import PostForm from "@/components/PostForm";
-import PostList from "@/components/PostList";
+import PostForm from "@/components/blog-form";
+import PostList from "@/components/blog-list";
 
 export default async function PostsRoot() {
   return (
     <>
-      <PostForm />
+      {/* <PostForm /> */}
       <PostList />
     </>
   );

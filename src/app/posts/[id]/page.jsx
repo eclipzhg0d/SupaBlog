@@ -1,7 +1,7 @@
 import React from "react";
 import supabase from "@/utils/supabase";
-import PostPage from "@/components/PostPage";
-import Comments from "@/components/Comments";
+import PostPage from "@/components/blog-page";
+import Comments from "@/components/comments";
 
 export default async function PostPageById({ params: { id } }) {
   const { data, error } = await supabase.from("posts").select().match({ id });

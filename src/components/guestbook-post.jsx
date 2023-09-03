@@ -1,7 +1,16 @@
 import supabase from "@/utils/supabase";
-import Date from "./ui/Date";
+import Date from "./ui/date";
 
-export default async function CommentPosts({ data }) {
+export default async function GuestBookPosts() {
+  const { data, error } = await supabase
+    .from("guestbook")
+    .select("*")
+    .order("id", { ascending: false });
+  if (error) throw new Error("Fetching failed.");
+
+  if (!data) {
+    return <div className="text-white">No records to show.</div>;
+  }
   return (
     <div className="text-white pt-5">
       {data?.map((post) => (

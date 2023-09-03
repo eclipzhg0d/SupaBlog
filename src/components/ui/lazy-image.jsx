@@ -14,7 +14,7 @@ export default function LazyImage({ imageSrc }) {
       <Image
         src={imageSrc}
         fill
-        objectFit="cover"
+        style={{ objectFit: "cover" }}
         alt="Image"
         className={cn(
           "duration-700 ease-in-out group-hover:opacity-75",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Date from "./ui/Date";
-import LazyImage from "./ui/LazyImage";
+import Date from "./ui/date";
+import LazyImage from "./ui/lazy-image";
 
 export default function PostPage({ post }) {
   return (

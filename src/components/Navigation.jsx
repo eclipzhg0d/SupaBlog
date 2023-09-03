@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "./ui/Logo";
+import Logo from "./ui/logo";
 import { usePathname } from "next/navigation";
-import Alert from "./ui/Alert";
+import Alert from "./ui/banner";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import {

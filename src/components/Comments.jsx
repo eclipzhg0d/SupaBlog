@@ -1,5 +1,5 @@
-import CommentForm from "./CommentForm";
-import CommentPosts from "./CommentPosts";
+import CommentForm from "./comment-form";
+import CommentPosts from "./comment-post";
 import supabase from "@/utils/supabase";
 
 export default async function Comments({ id }) {

@@ -1,6 +1,6 @@
 import React from "react";
-import LazyImage from "@/components/ui/LazyImage";
-import LogoClouds from "@/components/ui/LogoClouds";
+import LazyImage from "@/components/ui/lazy-image";
+import LogoClouds from "@/components/ui/logo-clouds";
 
 export default function Home() {
   return (
