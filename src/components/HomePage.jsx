@@ -46,7 +46,7 @@ export default function HomePage() {
           </div>
         </div>
         <LogoClouds />
-        <div className="hidden md:flex">
+        {/* <div className="hidden md:flex">
           <div className="w-full mx-auto mt-20 text-center md:w-10/12">
             <div className="relative z-0 w-full mt-8">
               <div className="relative overflow-hidden shadow-2xl">
@@ -62,7 +62,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

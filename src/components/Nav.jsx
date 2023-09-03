@@ -24,10 +24,6 @@ const navLink = [
     link: "/posts",
   },
   {
-    name: "Create a Post",
-    link: "/new",
-  },
-  {
     name: "Guestbook",
     link: "/guestbook",
   },

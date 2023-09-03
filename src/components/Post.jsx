@@ -2,6 +2,8 @@ import Link from "next/link";
 import LazyImage from "./ui/LazyImage";
 import Date from "./ui/Date";
 
+export const revalidate = 0;
+
 export default function Post({ post }) {
   return (
     <Link href={`/posts/${post.id}`}>

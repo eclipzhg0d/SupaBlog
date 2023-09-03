@@ -5,8 +5,10 @@ import GuestBookForm from "@/components/GuestBookForm";
 export default function GuestBookPage() {
   return (
     <>
-      <GuestBookForm />
-      <GuestBookPosts />
+      <div className="px-5">
+        <GuestBookForm />
+        <GuestBookPosts />
+      </div>
     </>
   );
 }

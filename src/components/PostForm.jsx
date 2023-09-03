@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import supabase from "@/utils/supabase";
 import { useSession, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
-const BlogNew = () => {
+export default function PostForm() {
   const router = useRouter();
   const { session } = useSession();
   const titleRef = useRef(null);
@@ -20,6 +20,7 @@ const BlogNew = () => {
     const { error: insertError } = await supabase.from("posts").insert({
       title: titleRef.current.value,
       content: contentRef.current.value,
+      category: "Travel",
       user_id: session.user.id,
       username: session.user.username,
     });
@@ -70,7 +71,7 @@ const BlogNew = () => {
                   ref={contentRef}
                   id="content"
                   placeholder="Content"
-                  rows={15}
+                  rows={5}
                   required
                   className="
               text-zinc-300
@@ -118,6 +119,4 @@ const BlogNew = () => {
       </SignedIn>
     </>
   );
-};
-
-export default BlogNew;
+}
