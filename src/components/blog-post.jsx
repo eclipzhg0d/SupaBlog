@@ -2,7 +2,7 @@ import Link from "next/link";
 import LazyImage from "./ui/lazy-image";
 import Date from "./ui/date";
 
-export default function PostCard({ post }) {
+export default function BlogPost({ post }) {
   return (
     <Link href={`/posts/${post.id}`}>
       <div className="text-white p-5 opacity-75 hover:opacity-100 ease-in-out transition">

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import supabase from "@/utils/supabase";
 import { useSession, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
-export default function PostForm() {
+export default function BlogForm() {
   const router = useRouter();
   const { session } = useSession();
   const titleRef = useRef(null);

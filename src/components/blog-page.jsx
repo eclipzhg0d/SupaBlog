@@ -3,7 +3,7 @@ import Link from "next/link";
 import Date from "./ui/date";
 import LazyImage from "./ui/lazy-image";
 
-export default function PostPage({ post }) {
+export default function BlogPage({ post }) {
   return (
     <>
       {post?.map((post) => (

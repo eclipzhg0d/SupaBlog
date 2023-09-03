@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-import Nav from "@/components/navigation";
+import Navigation from "@/components/navigation";
 import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className}`}>
-          <Nav />
+          <Navigation />
           <main className="container mx-auto md:px-36 ">{children}</main>
         </body>
       </html>

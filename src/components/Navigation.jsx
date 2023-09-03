@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Logo from "./ui/logo";
 import { usePathname } from "next/navigation";
-import Alert from "./ui/banner";
+import Banner from "./ui/banner";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import {
@@ -29,13 +29,13 @@ const navLink = [
   },
 ];
 
-export default function Nav() {
+export default function Navigation() {
   const [toggle, setToggle] = useState(false);
   const pathname = usePathname();
 
   return (
     <>
-      <Alert />
+      <Banner />
       <div className="text-slate-400 py-5 px-10 border-b border-zinc-900 flex items-center justify-between sticky top-0 z-10  backdrop-blur-xl  ">
         <div className="flex gap-5 items-center justify-between w-full">
           <Logo />
