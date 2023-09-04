@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LazyImage from "./ui/lazy-image";
-import Date from "./ui/date";
+import FormatDate from "./ui/date";
 
 export default function BlogPost({ post }) {
   return (
@@ -15,7 +15,7 @@ export default function BlogPost({ post }) {
             <div>{post.username}</div>
           </div>
           <div className="text-sm">
-            <Date dateString={post.created_at} />
+            <FormatDate dateString={post.created_at} />
           </div>
         </div>
       </div>

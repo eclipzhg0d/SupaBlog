@@ -1,5 +1,5 @@
 import supabase from "@/utils/supabase";
-import Date from "./ui/date";
+import FormatDate from "./ui/date";
 
 export default async function GuestBookPosts() {
   const { data, error } = await supabase
@@ -21,7 +21,7 @@ export default async function GuestBookPosts() {
           <div className="font-medium">{post.username}</div>
           <div>{post.content}</div>
           <div className="text-sm opacity-50">
-            <Date dateString={post.created_at} />
+            <FormatDate dateString={post.created_at} />
           </div>
         </div>
       ))}

@@ -2,7 +2,7 @@ import CommentForm from "./comment-form";
 import CommentPosts from "./comment-post";
 import supabase from "@/utils/supabase";
 
-export default async function Comments({ id }) {
+export default async function CommentSection({ id }) {
   const { data, error } = await supabase
     .from("comments")
     .select("*")

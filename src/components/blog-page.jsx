@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import Date from "./ui/date";
+import FormatDate from "./ui/date";
 import LazyImage from "./ui/lazy-image";
 
 export default function BlogPage({ post }) {
@@ -14,7 +12,7 @@ export default function BlogPage({ post }) {
           <div className="flex items-center gap-5 justify-center opacity-25 text-xs font-base py-10">
             <div>Author: {post.username}</div>
             <div>
-              Posted on: <Date dateString={post.created_at} />
+              Posted on: <FormatDate dateString={post.created_at} />
             </div>
             <div className="">
               <button className="px-3 py-1 rounded-md bg-zinc-900 text-white">
