@@ -5,7 +5,7 @@ import supabase from "@/utils/supabase";
 import { useEffect, useState } from "react";
 import BlogPost from "@/components/blog-post";
 
-export default function PostList() {
+export default function BlogList() {
   const [data, setData] = useState(null);
 
   useEffect(() => {

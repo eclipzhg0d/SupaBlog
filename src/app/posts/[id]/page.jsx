@@ -1,16 +1,16 @@
 import React from "react";
 import supabase from "@/utils/supabase";
-import PostPage from "@/components/blog-page";
+import BlogPage from "@/components/blog-page";
 import Comments from "@/components/comments";
 
-export default async function PostPageById({ params: { id } }) {
+export default async function BlogPageById({ params: { id } }) {
   const { data, error } = await supabase.from("posts").select().match({ id });
 
   if (error) throw new Error("Fetching failed.");
 
   return (
     <>
-      <PostPage post={data} />
+      <BlogPage post={data} />
       <Comments id={id} />
     </>
   );
